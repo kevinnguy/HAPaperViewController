@@ -137,10 +137,6 @@
     
     // First Load
     [self changeSlide];
-    
-    // Loop gallery - fix loop: http://bynomial.com/blog/?p=67
-    NSTimer *timer = [NSTimer timerWithTimeInterval:5.0f target:self selector:@selector(changeSlide) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 #pragma mark - Change slider

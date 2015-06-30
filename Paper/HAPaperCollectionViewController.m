@@ -19,6 +19,11 @@
 
 @implementation HAPaperCollectionViewController
 
+- (void)viewDidLoad {
+    NSLog(@"viewDidLoad");
+}
+
+
 - (id)initWithCollectionViewLayout:(UICollectionViewFlowLayout *)layout
 {
     if (self = [super initWithCollectionViewLayout:layout])

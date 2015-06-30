@@ -34,12 +34,6 @@
         UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
         [collectionView addGestureRecognizer:pinchGesture];
         
-        UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerGesture:)];
-        panGestureRecognizer.delegate = self;
-        panGestureRecognizer.minimumNumberOfTouches = 1;
-        panGestureRecognizer.maximumNumberOfTouches = 1;
-        [collectionView addGestureRecognizer:panGestureRecognizer];
-        
         self.collectionView = collectionView;
     }
     return self;
@@ -49,12 +43,6 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
-}
-
-
-- (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
-{
-    
 }
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
@@ -201,13 +189,5 @@
         }
     }
 }
-
-- (void)oneFingerGesture:(UIPanGestureRecognizer *)sender
-{
-        CGPoint point = [sender locationInView:sender.view];
-        NSLog(@"point.x %f", point.x);
-        NSLog(@"point.y %f", point.y);
-}
-
 
 @end
